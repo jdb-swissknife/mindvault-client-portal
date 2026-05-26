@@ -18,8 +18,10 @@ Static HTML prototype with Clerk-ready auth hooks.
 
 Live deployment target options:
 
-- `app.mindvaultstudio.net` for the shared portal
+- `portal.mindvaultstudio.net` for the shared client portal (current CNAME target)
 - `clientname.mindvaultstudio.net` for client-specific branded entry
+
+Do not use `app.mindvaultstudio.net`; it is reserved for the home-service company app.
 
 The page detects client context from:
 
@@ -70,6 +72,7 @@ Recommended next stack:
 
 Repo: `jdb-swissknife/mindvault-client-portal`
 GitHub Pages: `https://jdb-swissknife.github.io/mindvault-client-portal/`
+Custom domain target: `portal.mindvaultstudio.net` (requires Cloudflare CNAME: `portal` -> `jdb-swissknife.github.io`, DNS-only)
 
 Example personalized URL:
 
