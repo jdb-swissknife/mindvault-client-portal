@@ -66,6 +66,27 @@ Recommended next stack:
 - Supabase Postgres or VPS Postgres for app data
 - Cloudflare Pages or VPS tunnel for hosting
 
+## Current Deploy
+
+Repo: `jdb-swissknife/mindvault-client-portal`
+GitHub Pages: `https://jdb-swissknife.github.io/mindvault-client-portal/`
+
+Example personalized URL:
+
+`https://jdb-swissknife.github.io/mindvault-client-portal/?client=sloane&agent=sloane.mindvaultstudio.net`
+
+Important: `app.mindvaultstudio.net` appears to be in use by another MindVault app right now, so no custom CNAME is active on this repo yet.
+
+## Agent Safety Thread
+
+Agent safety should be woven through the whole client journey, not isolated at the end. Early lessons and portal copy should reinforce:
+
+- Never paste passwords, credit card numbers, private keys, or login codes into chat
+- If the agent needs access, ask it to guide a safe setup flow
+- Prefer OAuth, API keys in config files, or managed integrations over typing secrets
+- Client controls what tools/accounts are connected
+- Agent actions should be reviewed before they affect money, contracts, customers, or production systems
+
 ## Files
 
 - `index.html` -- complete static portal prototype
