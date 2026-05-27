@@ -19,8 +19,8 @@
     <section class="signin-gate" id="signInGate">
       <div class="signin-card">
         <span class="eyebrow">Private Client Access</span>
-        <h2>Sign in to open your MindVault portal.</h2>
-        <p>Your portal includes your agent link, training path, and saved tool requests. Sign in first to continue.</p>
+        <h2 id="gateTitle">Sign in to open your MindVault portal.</h2>
+        <p id="gateSubtitle">Your portal includes your agent link, training path, and saved tool requests. Sign in first to continue.</p>
         <div class="signin-points">
           <div class="signin-point"><b>Open your agent</b><span>Jump into your private agent workspace.</span></div>
           <div class="signin-point"><b>Continue training</b><span>Pick up where you left off in the Agent Quest.</span></div>
@@ -57,6 +57,8 @@ const agentUrl=agent.startsWith('http')?agent:`https://${agent}`;
 function setSignedInView(isSignedIn){document.getElementById('loadingNote').classList.remove('show');document.getElementById('signInGate').classList.toggle('show',!isSignedIn);document.getElementById('protectedContent').classList.toggle('show',isSignedIn);document.getElementById('authNotice').style.display=isSignedIn?'none':'block';document.getElementById('signInBtn').style.display=isSignedIn?'none':'inline-flex';}
 document.getElementById('title').textContent=`${pretty}'s MindVault agent home base.`;
 document.getElementById('subtitle').textContent=`This is the private portal for ${pretty}'s agent, training path, tools, and requests.`;
+document.getElementById('gateTitle').textContent=`Sign in to open ${pretty}'s MindVault portal.`;
+document.getElementById('gateSubtitle').textContent=`This private portal is set up for ${pretty}. Sign in first to open the agent link, continue training, and save tool requests.`;
 ['trainingLink','trainingCardLink'].forEach(id=>document.getElementById(id).href=learnUrl);
 ['agentLink','agentCardLink'].forEach(id=>document.getElementById(id).href=agentUrl);
 function getProgress(){try{return JSON.parse(localStorage.getItem('mvQuest')||'{}')}catch(e){return {}}}
