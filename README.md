@@ -12,6 +12,31 @@ This becomes the client's home base:
 - Request new custom tools
 - Later: reports, automations, files, support, billing
 
+## New Client Activation Flow
+
+Static activation page for the next-client handoff:
+
+- `https://portal.mindvaultstudio.net/activate.html?client=<slug>&agent=<agent-host>`
+
+Purpose:
+
+1. Collect one-time setup payment
+2. Start monthly subscription
+3. Hand the client into Clerk portal sign-up/login
+
+Current implementation:
+
+- `activate.html` -- branded activation page with three-step process
+- `docs/client-activation-checklist.md` -- internal ops checklist
+- `docs/plans/2026-05-27-next-client-payment-onboarding.md` -- implementation plan
+
+Important: `activate.html` currently uses placeholder Stripe URLs in script constants. Replace:
+
+- `SETUP_PAYMENT_URL`
+- `MONTHLY_SUBSCRIPTION_URL`
+
+with live Stripe Payment Links before sending to clients.
+
 ## Current State
 
 Static HTML prototype with Clerk-ready auth hooks.
